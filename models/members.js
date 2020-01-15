@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const memberSchema = new Schema({
     firstname: String,
     lastname: String,
-    role: String,
+    memberrole: { type: String, enum: ['president', 'secretary', 'treasurer', 'boardmember'] },
     rolesince: Date,
     email: String,
     age: Number,
