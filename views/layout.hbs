@@ -14,6 +14,13 @@
   <a href="/gallery">Bilder</a>
   <a href="/links">Links</a>
   <a href="/aboutUs">Über uns</a>
+
+  <a href="/private/admin"> Admin</a>
+  <a href="/private/events"> Termine</a>
+  <a href="/private/service"> Service</a>
+  <a href="/private/userStartSeite"> StartSeite</a>
+
+
   </div>
   <div id="signin">
 <form id="form" action="/signin" method="POST">
@@ -23,6 +30,9 @@
     <input id="myPassword" type="password" name="password" placeholder="********" value="" required>
     <!--input id="myPassword" type="password" name="" value=""-->
     <button id="login" type="submit">Login</button>
+</form>
+<form action="/signout" method="GET">
+ <button id="logout" type="submit">Logout</button>
 </form>
 
 <br>
