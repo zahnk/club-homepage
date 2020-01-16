@@ -12,7 +12,7 @@ nav {
   border-radius: 5px;
   padding: 15px;
   box-shadow: 2px 2px 10px grey;
-  background-image: linear-gradient(to bottom right, green, lightgreen); }
+  background-image: linear-gradient(to bottom right, #7cba00, #436400); }
 
 .error-message {
   width: 150px;
@@ -56,5 +56,26 @@ a:hover {
   height: 500px;
   box-shadow: 1px 1px 12px grey;
   border-radius: 5px; }
+
+#icon > img {
+  width: 125px;
+  height: 125px;
+  padding-right: 10px; }
+
+#icon {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: row;
+  padding-left: 10px;
+  padding-right: 30px; }
+
+#textIron {
+  color: #333333;
+  font-size: 80px; }
+
+#textGarden {
+  color: #7cba00;
+  font-size: 80px; }
 
 /*# sourceMappingURL=style.css.map */
