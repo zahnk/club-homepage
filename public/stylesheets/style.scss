@@ -6,14 +6,22 @@ body {
 
 nav{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   flex-direction: row;
   background-color: green;
   height: 50px;
   border-radius: 5px;
+  padding: 15px;
+  box-shadow: 2px 2px 10px grey;
+  background-image: linear-gradient(to bottom right, green, lightgreen);
 }
 
+.error-message{
+  width: 150px;
+  background-color: red;
+  color: whitesmoke
+}
 
 a {
     text-decoration: none;
@@ -25,4 +33,39 @@ a:hover{
   font-size: larger;
   font-weight: bolder;
   color:whitesmoke
+}
+
+#signin input{
+  border-radius: 10px;
+}
+
+#login{
+  border: none;
+  background-color: whitesmoke;
+  color: black;
+  box-shadow: 2px 2px darkgreen;
+}
+
+#login:focus{
+  box-shadow: none;
+}
+
+
+#signup{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+
+#signup form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 500px;
+  box-shadow: 1px 1px 12px grey;
+  border-radius: 5px;
 }
