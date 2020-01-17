@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const User = require('../models/users');
+const Manual = require('../models/manual')
 
 
 
@@ -23,10 +24,96 @@ router.get("/private/userStartSeite", (req, res, next) => {
 });
 
 
-
+//Einstiegsseite für die Anleitungen
 router.get("/private/service", (req, res, next) => {
   res.render("private/service");
 });
+
+//Hier fangen die Unterseiten an
+router.get("/private/service/sonstiges", (req,res,next)=>{
+Manual.find({category: "Sonstiges"})
+.then(manual=>{
+    res.render("private/service/sonstiges", {manual})})
+
+
+})
+
+router.get("/private/service/baeumeundstraeucher", (req,res,next)=>{
+    Manual.find({category: "Bäume und Sträucher"})
+    .then(manual=>{
+        res.render("private/service/baeumeundstraeucher", {manual})
+    })
+  
+  
+  })
+
+router.get("/private/service/pflanzenschnitt", (req,res,next)=>{
+    Manual.find({category: "Pflanzenschnitt"})
+    .then(manual=>{console.log(manual)
+        res.render("private/service/pflanzenschnitt", {manual})
+    })
+    
+    
+    })
+
+
+router.get("/private/service/saatundpflanzen", (req,res,next)=>{
+    Manual.find({category: "Saat und Pflanzen"})
+    .then(manual=>{
+        res.render("private/service/saatundpflanzen",{manual})
+    })
+   
+   
+   })
+
+
+router.get("/private/service/schaedlingsbekaempfung", (req,res,next)=>{
+    Manual.find({category: "Schädlingsbekämpfung"})
+    .then(manual=>{
+        res.render("private/service/schaedlingsbekaempfung", {manual})
+    })
+    
+    
+    })
+
+router.get("/private/service/verarbeitung", (req,res,next)=>{
+    Manual.find({category: "Verarbeitung"})
+    .then(manual=>{
+        res.render("private/service/verarbeitung", {manual})
+    })
+  
+  
+  })
+
+//Get route für das Formular zum erzeugen neuer Anleitungen
+  router.get("/private/service/serviceformular", (req,res,next)=>{
+    res.render("private/service/serviceformular")
+    
+    })
+
+//post Method zum erstellen neuer Anleitungen
+router.post("/private/service/serviceformular", (req, res,next)=>{
+    const{title, description, duration, links, tools, ingredients, level, category} = req.body
+    const owner= req.session.currentUser._id
+    //console.log(title, description, duration, links, tools, ingredients, level, category, owner)
+    Manual.create({
+        title, 
+        description, 
+        duration, 
+        links, 
+        tools, 
+        ingredients, 
+        level, 
+        category,
+        owner
+    })
+    .then(manual=>{
+        console.log(`Manual ${manual} saved` )
+        res.redirect("/private/service")
+    })
+})
+
+
 
 
 

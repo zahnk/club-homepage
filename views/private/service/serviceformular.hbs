@@ -1,0 +1,50 @@
+
+<div>
+<form id="form" action="/private/service/serviceformular" method="POST">
+<label for="title">Titel</label>
+    <input type="text" name="title" placeholder="Titel" required>
+     
+<br><br>
+<label for="level">Schwierigkeitsgrad</label>
+<select name="level">
+  <option value=""></option>
+  <option value="Anfänger">Anfänger</option>
+  <option value="Fortgeschrittener">Fortgeschritten</option>
+  <option value="Profi">Profi</option>
+  
+</select>
+<br><br>
+<label for="category">Kategorie</label>
+<select name="category">
+  <option value=""></option>
+  <option value="Pflanzenschnitt">Pflanzenschnitt</option>
+  <option value="Saat und Pflanzen">Saat und Pflanzen</option>
+  <option value="Verarbeitung">Verarbeitung</option>
+  <option value="Bäume und Sträucher">Bäume und Sträucher</option>
+  <option value="Schädlingsbekämpfung">Schädlingsbekämpfung</option>
+  <option value="Sonstiges">Sonstiges</option>
+  
+</select>
+
+<br><br>
+<label for="duration">Zeitaufwand</label>
+<input type="text" name="duration">
+
+<br><br>
+<label for="ingredients">Zutaten</label>
+<input type="text" name="ingredients">
+<br><br>
+<label for="tools">Werkzeug/Utensilien</label>
+<input type="text" name="tools">
+<br><br>
+<label for="description">Beschreibung </label>
+    <textarea rows="10" cols="150" name="description" > </textarea>
+<br><br>
+
+<label for="links">Links</label>
+<input type="text" name="links">
+<br><br>
+<button type="submit">Anleitung speichern</button>
+  </form>
+<a id="abbrechen" href="/private/service">Abbrechen</a>
+</div>

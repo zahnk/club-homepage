@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
@@ -106,6 +107,39 @@ a:hover {
 .about-us-header > iframe {
   box-shadow: 3px 3px 12px grey; }
 
+<<<<<<< HEAD
+#seitentitel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 25px;
+  margin-bottom: 0; }
+
+#übersicht {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 500px;
+  flex-wrap: wrap;
+  margin-top: 0; }
+
+#übersicht a {
+  width: 250px;
+  height: 250px;
+  box-shadow: 3px 3px 15px #7cba00;
+  margin-top: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 20px;
+  color: #7cba00;
+  text-shadow: 1px 1px #436400; }
+
+#übersicht a:hover {
+  color: #7cba00; }
+=======
 .member-container {
   display: flex;
   flex-direction: row;
@@ -127,5 +161,6 @@ a:hover {
   font-size: 0.8rem;
   color: #bfbfbf;
   font-weight: bolder; }
+>>>>>>> master
 
 /*# sourceMappingURL=style.css.map */
