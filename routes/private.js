@@ -18,7 +18,8 @@ router.use((req, res, next) => {
 });                              
 
 router.get("/private/userStartSeite", (req, res, next) => {
-    res.render("private/userStartSeite");
+    let user=req.session.currentUser
+    res.render("private/userStartSeite", {user: user});
 });
 
 router.get("/private/admin", (req, res, next) => {
