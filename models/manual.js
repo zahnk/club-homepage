@@ -7,7 +7,16 @@ const manualSchema = new Schema({
     ingredients: String,
     tools: String, 
     duration: Number,
-    owner: {type: Schema.Types.ObjectId, ref: 'User'}
+    owner: {type: Schema.Types.ObjectId, ref: 'User'},
+    level:{
+        type: String,
+        enum:["Anfänger", "Fortgeschrittener", "Profi"],
+      },
+    category:{
+        type: String,
+        enum: ["Pflanzenschnitt", "Saat und Pflanzen", "Verarbeitung", "Bäume und Sträucher", "Schädlingsbekämpfung", "Sonstiges"]
+      },
+    links: []
     }, 
 {
     timestamps: true

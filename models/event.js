@@ -2,10 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const eventSchema = new Schema({
-    eventname: String,
-    eventdescription: String,
-    eventdate: Date,
-    eventplace: String
+    name: String,
+    description: String,
+    date: Date,
+    place: String,
+    art: {
+       type: String, 
+       enum: ["intern", "Verarbeitung", "Pflanzen", "Sonstiges"]
+    }
     }, 
 {
     timestamps: true
