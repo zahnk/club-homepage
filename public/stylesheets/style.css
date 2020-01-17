@@ -72,10 +72,18 @@ a:hover {
 
 #textIron {
   color: #333333;
-  font-size: 80px; }
+  font-size: 60px;
+  letter-spacing: 1px; }
 
 #textGarden {
   color: #7cba00;
+  font-size: 60px;
+  letter-spacing: 1px; }
+
+.smallImages {
+  display: inline-flexbox;
+  justify-content: space-around;
+  background-color: whitesmoke;
   font-size: 80px; }
 
 #aboutUs-box {
