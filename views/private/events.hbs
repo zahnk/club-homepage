@@ -1,6 +1,31 @@
 <div id="signup">
 <h1>Veranstaltungen</h1>
 
+{{#if allEvents}}
+<table>
+    {{#each allEvents}}
+    <thead> nächste Termine </thead>
+    <tr>
+    <th>Name der Veranstaltung</th>
+    <th>Beschreibung</th>
+    <th>Datum der Veranstaltung</th>
+    <th>Ort</th>
+    <th>Kategorie</th>
+  </tr>
+        <tr>
+            <td>{{name}}</td>
+            <td>{{description}}</td>
+            <td>{{formattedDate}}</td>
+            <td>{{place}}</td>
+            <td>{{art}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+{{else}}
+    <h3>No events found!</h3>
+{{/if}}
+
 <form id="form" action="/events" method="POST">
 <label for="name">Bezeichnung der Veranstaltung</label>
     <input type="text" name="name" placeholder="Bezeichung" required>
@@ -33,5 +58,6 @@
   {{#if errorMessage}}
     <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
+
 
 </div>

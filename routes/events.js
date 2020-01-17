@@ -23,7 +23,24 @@ router.use((req, res, next) => {
 });*/
 
 router.get("/private/events", (req, res, next) => {
-  res.render("private/events");
+    Event.find()
+    .then (allEvents => {
+        //console.log (allEvents);
+        const options = { 
+            weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
+        };
+
+        const formattedEvents = allEvents.map(event => {
+        event.formattedDate = new Date(event.date).toLocaleDateString('de-DE',{ 
+           day: 'numeric',  month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'
+        }) + ' Uhr';
+        return event;
+        })
+        res.render("private/events", {allEvents:formattedEvents});    
+    })
+    .catch(error => {
+        next(error);
+    })
 });
 
 router.post("/events", (req, res, next) => {
