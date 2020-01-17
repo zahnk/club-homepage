@@ -34,4 +34,28 @@
     <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
 
+{{#if allEvents}}
+<table>
+    {{#each allEvents}}
+    <tr>
+    <th>Name der Veranstaltung</th>
+    <th>Beschreibung</th>
+    <th>Datum der Veranstaltung</th>
+    <th>Ort</th>
+    <th>Kategorie</th>
+  </tr>
+        <tr>
+            <td>{{name}}</td>
+            <td>{{description}}</td>
+            <td>{{formattedDate}}</td>
+            <td>{{place}}</td>
+            <td>{{art}}</td>
+        </tr>
+    {{/each}}
+</table>
+
+{{else}}
+    <h3>No events found!</h3>
+{{/if}}
+
 </div>
