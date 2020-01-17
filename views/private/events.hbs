@@ -1,1 +1,37 @@
+<div id="signup">
 <h1>Veranstaltungen</h1>
+
+<form id="form" action="/events" method="POST">
+<label for="name">Bezeichnung der Veranstaltung</label>
+    <input type="text" name="name" placeholder="Bezeichung" required>
+    
+<br><br>
+<label for="description">Inhalt des Termins</label>
+    <textarea name="description" required > </textarea>
+    
+<br><br>
+
+    <label for="date">Datum der Veranstalung</label>
+    <input type="datetime-local" name="date"  required>
+<br><br>
+    <label for="place">Wo?</label>
+    <input id="place" type="text" name="place" placeholder="Ort der Veranstaltung" value="" required>
+
+<br><br>
+    <label for="art">Art der Veranstaltungen</label>
+    <select name="art" >
+      <option>intern</option>
+      <option>Verarbeitung</option>
+      <option>Pflanzen</option>
+      <option selected>Sonstiges</option>
+    </select>   
+   
+<br><br>
+    <button type="submit">Veranstaltung anlegen</button>
+  </form>
+<br>
+  {{#if errorMessage}}
+    <div class="error-message">{{ errorMessage }}</div>
+  {{/if}}
+
+</div>

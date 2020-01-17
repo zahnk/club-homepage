@@ -72,7 +72,11 @@ app.use('/', auth);
 const private = require('./routes/private');
 app.use('/', private);
 
-const members = require('./routes/index');
-app.use('/', members);
+const events = require('./routes/events');
+app.use('/', events);
+
+const service = require('./routes/service');
+app.use('/', service);
+
 
 module.exports = app;
