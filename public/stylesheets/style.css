@@ -106,4 +106,26 @@ a:hover {
 .about-us-header > iframe {
   box-shadow: 3px 3px 12px grey; }
 
+.member-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start; }
+
+.member-container img {
+  object-fit: scale-down;
+  object-position: center;
+  height: 10rem;
+  width: 10rem; }
+
+.member-container div {
+  padding: 1rem;
+  margin: 1rem;
+  width: 33.333%; }
+
+.member-container p {
+  font-size: 0.8rem;
+  color: #bfbfbf;
+  font-weight: bolder; }
+
 /*# sourceMappingURL=style.css.map */

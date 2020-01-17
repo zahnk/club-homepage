@@ -1,0 +1,16 @@
+<h1>Vereinsmitglieder</h1>
+
+<!-- <div class="member-container"> -->
+{{#each AllMembers}}
+   
+   <h2> {{this.firstname}} {{this.lastname}}, {{this.memberrole}} </h2>
+   <br>
+   <img src="{{this.imageUrl}}">
+   <!-- <p><h3> Rolle seit {{this.rolesince}}</h3>  </p> -->
+   <p><h3> Email-Adresse: {{this.email}}</h3>  </p>
+   <p><h3> Alter: {{this.age}}</h3> </p>
+   <hr>
+   {{/each}}
+
+</div>
+<br>
