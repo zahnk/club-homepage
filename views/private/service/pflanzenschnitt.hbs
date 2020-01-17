@@ -1,11 +1,36 @@
 <h1>Pflanzenschnitt</h1>
+<form action="/private/service/filter" method="POST">
+<label for="filter">Filtern nach Level</label>
+<select name="filter">
+  <option value="Anfänger">Anfänger</option>
+  <option value="Fortgeschrittener">Fortgeschrittener</option>
+  <option value="Profi">Profi</option>
+</select>
+<button type="submit">Filtern</button>
+</form>
 
-<ul>
+<div>
 {{#each manual}}
-<li>{{this.title}}</li>
-{{/each}}
-</ul>
+<div>
+<h3>Titel: {{this.title}}</h3>
+<i><strong>Level: {{this.level}}</strong></i>
+<p>Aufwand: {{this.duration}} Stunden</p>
+{{#if this.ingredients}}
+<p>Zutaten: {{this.ingredients}}</p>
+{{/if}}
 
+{{#if this.tools}}
+<p>Werkzeug/Utensilien: {{this.tools}}</p>
+{{/if}}
+<p>Beschreibung: {{this.description}}</p>
+
+
+<a href="/private/service/{{this._id}}">Bearbeiten</a>
+
+</div>
+{{/each}}
+
+</div>
 
 
 

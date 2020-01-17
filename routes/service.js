@@ -48,13 +48,23 @@ router.get("/private/service/baeumeundstraeucher", (req,res,next)=>{
   })
 
 router.get("/private/service/pflanzenschnitt", (req,res,next)=>{
-    Manual.find({category: "Pflanzenschnitt"})
-    .then(manual=>{console.log(manual)
+    
+    Manual.find({category: "Pflanzenschnitt"}).sort({level: 1})
+    .then(manual=>{
         res.render("private/service/pflanzenschnitt", {manual})
     })
-    
-    
+ 
+})
+
+//Filteroption nach Level
+router.post("/private/service/filter", (req,res,next)=>{
+    let level=req.body.filter
+    console.log(level)
+    Manual.find({category: "Pflanzenschnitt"} && {level})
+    .then(manual=>{
+        res.render("private/service/pflanzenschnitt", {manual})
     })
+})
 
 
 router.get("/private/service/saatundpflanzen", (req,res,next)=>{
@@ -108,8 +118,7 @@ router.post("/private/service/serviceformular", (req, res,next)=>{
         owner
     })
     .then(manual=>{
-        console.log(`Manual ${manual} saved` )
-        res.redirect("/private/service")
+         res.redirect("/private/service")
     })
 })
 
