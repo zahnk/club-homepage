@@ -165,3 +165,33 @@ text-align: center;
 #übersicht a:hover{
   color:rgb(124,186,0);
 }
+
+table {
+  border-collapse: separate;
+  border-spacing: 0.2em;
+  margin-bottom: 40 px;
+  margin-top: 10 px;
+  width: 90vw;
+}
+  
+th,td {
+  padding: 0.2em 0.5em;
+  border-radius: 0.1em;  
+}  
+
+th {
+  background-color: rgb(124,186,0);
+  color: black;
+}
+thead{
+ font-weight: bolder ;
+}
+
+td {
+  text-align: right;
+  box-shadow: inset 1px 3px 5px -3px rgba(0,0,0,0.5);
+}   
+
+td:empty{
+  box-shadow: none;
+}
