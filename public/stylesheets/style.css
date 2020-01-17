@@ -80,4 +80,30 @@ a:hover {
   font-size: 60px;
   letter-spacing: 1px; }
 
+.smallImages {
+  display: inline-flexbox;
+  justify-content: space-around;
+  background-color: whitesmoke;
+  font-size: 80px; }
+
+#aboutUs-box {
+  background-color: lightgrey;
+  margin-bottom: 0px;
+  padding-top: 20px;
+  text-align: center; }
+
+.background-whitesmoke {
+  background-color: whitesmoke;
+  margin-top: 0px;
+  padding-top: 20px;
+  text-align: center; }
+
+.about-us-header {
+  text-align: center;
+  justify-content: center;
+  margin-top: 10px; }
+
+.about-us-header > iframe {
+  box-shadow: 3px 3px 12px grey; }
+
 /*# sourceMappingURL=style.css.map */

@@ -33,6 +33,8 @@ const Mitglieder = [
       }
 ];
 
+
+
 Member.create(Mitglieder, (err) => {
     if (err) { throw(err)}
     console.log(`${Mitglieder.length} members created`)
