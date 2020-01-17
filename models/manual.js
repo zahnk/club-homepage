@@ -22,6 +22,6 @@ const manualSchema = new Schema({
     timestamps: true
 });
 
-const Manual = mongoose.model("Event", manualSchema);
+const Manual = mongoose.model("Manual", manualSchema);
 
 module.exports = Manual;
