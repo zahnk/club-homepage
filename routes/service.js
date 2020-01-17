@@ -22,16 +22,11 @@ router.get("/private/userStartSeite", (req, res, next) => {
     res.render("private/userStartSeite", {user: user});
 });
 
-//Nur wer eingelogged ist und Adminrechte hat, hat Zugriff auf die Adminseite
-router.get("/private/admin", (req, res, next) => {
-if(req.session.currentUser.userrole=="admin"){
-    res.render("private/admin");
-}
-else{
-    res.redirect("/");
-}
-});
 
+
+router.get("/private/service", (req, res, next) => {
+  res.render("private/service");
+});
 
 
 
