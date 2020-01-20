@@ -29,6 +29,14 @@ router.get("/private/service", (req, res, next) => {
   res.render("private/service");
 });
 
+//Löschen von Anleitungen über die Adminseite
+router.get("/private/serviceDelete", (req, res, next) => {
+    Manual.find().populate("owner")
+    .then(allManuals=>{
+        console.log(allManuals)
+        res.render("private/serviceDelete", {allManuals})
+    })
+ });
 
 //post Method zum erstellen neuer Anleitungen
 router.post("/private/service/serviceformular", (req, res,next)=>{
@@ -54,12 +62,10 @@ router.post("/private/service/serviceformular", (req, res,next)=>{
 
 
 //Ansicht aller Anleitungen
-
-//PlfanzenSchnitt
 router.get("/private/service/:category", (req,res,next)=>{
     let category=req.params.category
     
-Manual.find({category: category})
+Manual.find({category: category}).sort({level: 1})
     .then(allManuals=>{
         
         res.render("private/serviceDetails.hbs", {allManuals: allManuals})
@@ -95,6 +101,12 @@ router.post("/private/service/serviceformular/:id", (req, res,next)=>{
     .catch(err=>console.log(err))
 })
 
-
+router.get("/private/serviceDelete/:id", (req,res,next)=>{
+    Manual.findByIdAndDelete({_id: req.params.id})
+    .then(oneManual=>{
+        res.redirect("/private/serviceDelete")
+    })
+    .catch(err=>console.log(err))
+})
 
 module.exports = router;

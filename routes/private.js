@@ -104,15 +104,4 @@ router.get("/private/deleteMembers", (req, res, next) => {
     });
 
 
-    //Löschung von Services / Anleitungen
-router.get("/private/serviceDelete", (req, res, next) => {
-    if(req.session.currentUser.userrole=="admin"){
-        res.render("private/serviceDelete");
-    }
-    else{
-        res.redirect("/");
-    }
-    });
-
-
 module.exports = router;
