@@ -32,7 +32,24 @@ else{
 }
 });
 
+//Erfassung von Events und Terminen
+router.get("/private/adminEvents", (req, res, next) => {
+    if(req.session.currentUser.userrole=="admin"){
+        res.render("private/adminEvents");
+    }
+    else{
+        res.redirect("/");
+    }
+    });
 
-
+//Erfassung von Members
+router.get("/private/adminMembers", (req, res, next) => {
+    if(req.session.currentUser.userrole=="admin"){
+        res.render("private/adminMembers");
+    }
+    else{
+        res.redirect("/");
+    }
+    });
 
 module.exports = router;
