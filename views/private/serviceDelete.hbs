@@ -1,0 +1,24 @@
+<h1>Anleitungen löschen</h1>
+
+<a href="/private/admin">Zurück</a>
+<table id="myTable">
+  <tr>
+    <th>Titel</th>
+    <th>Kategorie</th>
+    <th>Erstellt am</th>
+    <th>Geändert am</th>
+    <th>Ersteller</th>
+    <th>Löschen</th>
+  </tr>
+  {{#each allManuals}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{this.category}}</td>
+            
+            <td>{{this.createdAt}}</td>
+            <td>{{this.updatedAt}}</td>
+            <td>{{owner.firstname}} {{owner.lastname}}</td>
+            <td><a href="/private/serviceDelete/{{this._id}}">Löschen</a></td>
+        </tr>
+    {{/each}}
+</table>
