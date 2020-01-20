@@ -1,4 +1,4 @@
-<h1>Administration Mitglieder</h1>
+<h1>Neuanlage von Mitgliedern</h1>
 <div id="signup">
 <br>
 <form action="/private/adminMembers" method="POST">
@@ -41,15 +41,6 @@
 
 
 
- {{#each AllMembers}}
-   
-   <h2> {{this.firstname}} {{this.lastname}}, {{this.memberrole}} </h2>
-   <br>
-   <!-- img src="{{this.imageUrl}}" -->
-   <p><h3> Rolle seit {{this.rolesince}}</h3>  </p>
-   <p><h3> Email-Adresse: {{this.email}}</h3>  </p>
-   <p><h3> Alter: {{this.age}}</h3> </p>
-   <hr>
-   {{/each}}
+ 
 
 

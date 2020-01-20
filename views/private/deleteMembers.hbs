@@ -1,0 +1,50 @@
+<h1>Löschen von Mitgliedern</h1>
+<div id="signup">
+<br>
+<table>
+    <tr>
+    <th>Vorname</th>
+    <th>Nachname</th>
+    <th>Rolle</th>
+    <th>Email-Adresse</th>
+    <th>Löschen</th>
+  </tr>
+  {{#each AllMembers}}
+        <tr>
+            <td>{{firstname}}</td>
+            <td>{{lastname}}</td>
+            <td>{{memberrole}}</td>
+            <td>{{email}}</td>
+            <td> <a href="/private/deleteMembers/{{this._id}}"> Löschen </a></td>
+        </tr>
+    {{/each}}
+</table>
+
+<!--form action="/private/deleteMembers" method="POST">
+
+
+
+
+
+
+<label for="name">Email-Adresse</label>
+    <input type="text" name="email" placeholder="" required>
+<br><br>
+<br><br>
+    
+    <button type="submit"><strong> Mitglied löschen </strong> </button>
+    <br>
+    <button type="button"><strong> <a href="/members"> Abbrechen </strong></a></button>
+        
+  </--form>
+<br>
+  {{#if errorMessage}}
+    <div class="error-message">{{ errorMessage }}</div>
+  {{/if}}
+</div>
+
+
+
+ 
+
+

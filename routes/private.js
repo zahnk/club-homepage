@@ -95,13 +95,20 @@ Member.findOne({"email": email})
 
 //Löschung von Mitgliedern (Members)
 router.get("/private/deleteMembers", (req, res, next) => {
-    if(req.session.currentUser.userrole=="admin"){
-        res.render("private/deleteMembers");
-    }
-    else{
-        res.redirect("/");
-    }
+    Member.find() 
+        .then(AllMembers => {
+            res.render("private/deleteMembers", {AllMembers})
+        })
     });
 
+router.get("/private/deleteMembers/:id", (req, res, next) => {
+    Member.findByIdAndDelete(req.params.id) 
+    .then(OneMember => {
+        res.redirect("/private/deleteMembers")
+    })
+    .catch(error => {
+        next(error);
+    })   
+});     
 
 module.exports = router;
