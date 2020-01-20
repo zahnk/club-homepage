@@ -30,70 +30,7 @@ router.get("/private/service", (req, res, next) => {
 });
 
 //Hier fangen die Unterseiten an
-router.get("/private/service/sonstiges", (req,res,next)=>{
-Manual.find({category: "Sonstiges"})
-.then(manual=>{
-    res.render("private/service/sonstiges", {manual})})
 
-
-})
-
-router.get("/private/service/baeumeundstraeucher", (req,res,next)=>{
-    Manual.find({category: "Bäume und Sträucher"})
-    .then(manual=>{
-        res.render("private/service/baeumeundstraeucher", {manual})
-    })
-  
-  
-  })
-
-router.get("/private/service/pflanzenschnitt", (req,res,next)=>{
-    
-    Manual.find({category: "Pflanzenschnitt"}).sort({level: 1})
-    .then(manual=>{
-        res.render("private/service/pflanzenschnitt", {manual})
-    })
- 
-})
-
-//Filteroption nach Level
-router.post("/private/service/filter", (req,res,next)=>{
-    let level=req.body.filter
-    console.log(level)
-    Manual.find({category: "Pflanzenschnitt"} && {level})
-    .then(manual=>{
-        res.render("private/service/pflanzenschnitt", {manual})
-    })
-})
-
-
-router.get("/private/service/saatundpflanzen", (req,res,next)=>{
-    Manual.find({category: "Saat und Pflanzen"})
-    .then(manual=>{
-        res.render("private/service/saatundpflanzen",{manual})
-    })
-   
-   
-   })
-
-
-router.get("/private/service/schaedlingsbekaempfung", (req,res,next)=>{
-    Manual.find({category: "Schädlingsbekämpfung"})
-    .then(manual=>{
-        res.render("private/service/schaedlingsbekaempfung", {manual})
-    })
-    
-    
-    })
-
-router.get("/private/service/verarbeitung", (req,res,next)=>{
-    Manual.find({category: "Verarbeitung"})
-    .then(manual=>{
-        res.render("private/service/verarbeitung", {manual})
-    })
-  
-  
-  })
 
 //Get route für das Formular zum erzeugen neuer Anleitungen
   router.get("/private/service/serviceformular", (req,res,next)=>{
