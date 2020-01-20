@@ -58,6 +58,15 @@ a:hover {
   box-shadow: 1px 1px 12px grey;
   border-radius: 5px; }
 
+#signup input {
+  width: 200px; }
+
+#signup textarea {
+  width: 200px; }
+
+#signup select {
+  width: 20l0px; }
+
 #icon > img {
   width: 125px;
   height: 125px;
@@ -163,6 +172,9 @@ td {
 
 td:empty {
   box-shadow: none; }
+
+td a {
+  color: blue; }
 
 .modalBuch {
   position: fixed;

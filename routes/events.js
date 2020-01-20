@@ -75,7 +75,7 @@ Event.findOne({  "name": name, "date": date, "place": place  })
                 art
             })
                 .then(() => {
-                    res.redirect("/");
+                    res.redirect("/private/events");
                 })
                 .catch(error => {
                     console.log(error);
