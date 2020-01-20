@@ -13,15 +13,19 @@
 <div>
 <h2>{{this.title}}</h2>
 <p><strong>Zeitaufwand</strong> <i>{{this.duration}}</i> Stunden</p>
-<p><strong>Benötigte Utensilien</strong> <i>{{this.tools}}</i></p>
+<p><strong>Benötigte Utensilien</strong><i>{{this.tools}}</i></p>
 {{#if this.ingredients}}
 <p><strong>Notwendige Zutaten</strong> <i>{{this.ingredients}}</i></p>
 {{/if}}
 <p><strong>Schwierigkeitsrad</strong> <i>{{this.level}}</i></p>
 <textarea cols="100" rows="20" readonly>{{this.description}}</textarea>
 </div>
-<form action="/private/service/{{this._id}}/edit" method="POST">
+<form action="/private/service/{{this._id}}/edit" method="GET">
+
 <button type="submit">Bearbeiten</button>
+{{#if message}}
+{{message}}
+{{/if}}
 </form>
 {{/each}}
 
