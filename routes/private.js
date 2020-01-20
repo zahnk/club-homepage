@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const User = require('../models/users');
+const Member = require('../models/members');
 
 
 
@@ -32,6 +33,48 @@ else{
 }
 });
 
+
+
+
+router.post("/private/members_adm", (req, res, next) => {
+  const email = req.body.email;
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  const memberrole = req.body.memberrole;
+  const rolesince = req.body.rolesince;
+  const age = req.body.age;
+  //const imageUrl = req.body.imgUrl;
+  const owner = req.session.currentUser._id;
+  
+  console.log("nach post in members_adm");
+  
+Member.findOne({"email": email})
+        .then(data => {
+            if (data !== null) {
+                res.render("private/members_adm", {
+                    errorMessage: "Member already exists!"
+                });
+                return;
+            }
+            Member.create({
+                email, 
+                firstname,
+                lastname,
+                memberrole,
+                rolesince,
+                age
+            })
+                .then(() => {
+                    res.redirect("/private");
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        })
+        .catch(error => {
+            next(error);
+        })
+}); 
 
 
 
