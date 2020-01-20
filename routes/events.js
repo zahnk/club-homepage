@@ -29,7 +29,6 @@ router.get("/private/events", (req, res, next) => {
         const options = { 
             weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit'
         };
-
         const formattedEvents = allEvents.map(event => {
         event.formattedDate = new Date(event.date).toLocaleDateString('de-DE',{ 
            day: 'numeric',  month: 'numeric', year: 'numeric', hour: 'numeric', minute: 'numeric'
@@ -43,7 +42,7 @@ router.get("/private/events", (req, res, next) => {
     })
 });
 
-router.post("/events", (req, res, next) => {
+router.post("/private/adminEvents", (req, res, next) => {
     
     const name = req.body.name;
     const date = req.body.date;
@@ -51,6 +50,7 @@ router.post("/events", (req, res, next) => {
     const place = req.body.place;
     const art = req.body.art
 
+    console.log ("bis hierhin");
     /*if (email === "" || password === "") {
         res.render("events", {
             errorMessage: "Please enter both, email and password to sign in."
