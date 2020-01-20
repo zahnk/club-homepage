@@ -82,7 +82,7 @@ Member.findOne({"email": email})
                 age
             })
                 .then(() => {
-                    res.redirect("/private/members_list");
+                    res.redirect("/members");
                 })
                 .catch(error => {
                     console.log(error);
