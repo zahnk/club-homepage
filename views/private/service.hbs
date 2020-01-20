@@ -1,6 +1,12 @@
 <div id="seitentitel"><h1>Übersicht aller Services</h1></div>
 
-<a href="/private/service/serviceformular">Neue Anleitung erstellen</a>
+<button class="triggerBuch">Buch hinzufügen</button>
+ <div class="modalBuch">
+        <div class="modal-contentBuch">
+            <span class="close-buttonBuch">&times;</span>
+            {{>serviceformular}}
+        </div>
+</div>
 
 <div id="übersicht">
 
