@@ -95,47 +95,20 @@ Member.findOne({"email": email})
 
 //Löschung von Mitgliedern (Members)
 router.get("/private/deleteMembers", (req, res, next) => {
-    if(req.session.currentUser.userrole=="admin"){
-        res.render("private/deleteMembers");
-    }
-    else{
-        res.redirect("/");
-    }
+    Member.find() 
+        .then(AllMembers => {
+            res.render("private/deleteMembers", {AllMembers})
+        })
     });
 
-router.post("/private/deleteMembers", (req, res, next) => {
-  const email = req.body.email;
-  const firstname = req.body.firstname;
-  const lastname = req.body.lastname;
-  //const memberrole = req.body.memberrole;
-  //const rolesince = req.body.rolesince;
-  //const age = req.body.age;
-  //const imageUrl = req.body.imgUrl;
-  const owner = req.session.currentUser._id;
-  
-  //console.log("nach post in deleteMembers");
-  
-Member.findOne({"email": email})
-        .then(data => {
-            if (data == null) {
-                res.render("private/deleteMembers", {
-                    errorMessage: "Member does not exist!"
-                });
-                return;
-            }
-            Member.deleteOne({
-                email
-                })
-                .then(() => {
-                    res.redirect("/members");
-                })
-                .catch(error => {
-                    console.log(error);
-                })
-        })
-        .catch(error => {
-            next(error);
-        })
+router.get("/private/deleteMembers/:id", (req, res, next) => {
+    Member.findByIdAndDelete(req.params.id) 
+    .then(OneMember => {
+        res.redirect("/private/deleteMembers")
+    })
+    .catch(error => {
+        next(error);
+    })   
 });     
 
 module.exports = router;
