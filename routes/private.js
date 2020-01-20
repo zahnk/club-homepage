@@ -103,6 +103,40 @@ router.get("/private/deleteMembers", (req, res, next) => {
     }
     });
 
+router.post("/private/deleteMembers", (req, res, next) => {
+  const email = req.body.email;
+  const firstname = req.body.firstname;
+  const lastname = req.body.lastname;
+  //const memberrole = req.body.memberrole;
+  //const rolesince = req.body.rolesince;
+  //const age = req.body.age;
+  //const imageUrl = req.body.imgUrl;
+  const owner = req.session.currentUser._id;
+  
+  //console.log("nach post in deleteMembers");
+  
+Member.findOne({"email": email})
+        .then(data => {
+            if (data == null) {
+                res.render("private/deleteMembers", {
+                    errorMessage: "Member does not exist!"
+                });
+                return;
+            }
+            Member.deleteOne({
+                email
+                })
+                .then(() => {
+                    res.redirect("/members");
+                })
+                .catch(error => {
+                    console.log(error);
+                })
+        })
+        .catch(error => {
+            next(error);
+        })
+});     
 
     //Löschung von Services / Anleitungen
 router.get("/private/serviceDelete", (req, res, next) => {
