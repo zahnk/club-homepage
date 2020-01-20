@@ -1,32 +1,22 @@
-Anleitung bearbeiten
-
-
 <div>
-<form id="form" action="/private/service/serviceformular" method="POST">
+<form  action="/private/service/serviceformular/{{oneManual._id}}" method="POST">
+
+<br><br>
+<label for="category">Kategorie</label>
+<input name="category" value="{{oneManual.category}}" readonly>
+
+<br><br>
 <label for="title">Titel</label>
-    <input type="text" name="title" value={{oneManual.title}}>
+<input type="text" name="title" value="{{oneManual.title}}">
      
 <br><br>
 <label for="level">Schwierigkeitsgrad</label>
-<select name="level">
+<select name="level" required>
   <option value=""></option>
   <option value="Anfänger">Anfänger</option>
   <option value="Fortgeschrittener">Fortgeschritten</option>
   <option value="Profi">Profi</option>
    
-</select>
-<br><br>
-<label for="category">Kategorie</label>
-<select name="category">
-  <option value=""></option>
-  <option value="Pflanzenschnitt">Pflanzenschnitt</option>
-  <option value="Saat und Pflanzen">Saat und Pflanzen</option>
-  <option value="Verarbeitung">Verarbeitung</option>
-  <option value="Bäume und Sträucher">Bäume und Sträucher</option>
-  <option value="Schädlingsbekämpfung">Schädlingsbekämpfung</option>
-  <option value="Sonstiges">Sonstiges</option>
- 
-  
 </select>
 
 <br><br>
@@ -35,16 +25,18 @@ Anleitung bearbeiten
 
 <br><br>
 <label for="ingredients">Zutaten</label>
-<input type="text" name="ingredients" value={{oneManual.ingredients}}>
+<input type="text" name="ingredients" value="{{oneManual.ingredients}}">
 <br><br>
 <label for="tools">Werkzeug/Utensilien</label>
-<input type="text" name="tools" value={{oneManual.tools}}>
+<input type="text" name="tools" value="{{oneManual.tools}}">
+
 <br><br>
 <label for="description">Beschreibung </label>
     <textarea rows="15" cols="110" name="description" > {{oneManual.description}}</textarea>
 <br><br>
 
 <button type="submit">Anleitung speichern</button>
+<a href="/private/service/{{oneManual.category}}">Abbrechen</a>
   </form>
 </div>
 
