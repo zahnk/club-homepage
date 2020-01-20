@@ -54,12 +54,10 @@ router.post("/private/service/serviceformular", (req, res,next)=>{
 
 
 //Ansicht aller Anleitungen
-
-//PlfanzenSchnitt
 router.get("/private/service/:category", (req,res,next)=>{
     let category=req.params.category
     
-Manual.find({category: category})
+Manual.find({category: category}).sort({level: 1})
     .then(allManuals=>{
         
         res.render("private/serviceDetails.hbs", {allManuals: allManuals})
