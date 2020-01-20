@@ -70,6 +70,18 @@ a:hover{
   border-radius: 5px;
 }
 
+#signup input{
+  width: 200px;
+}
+
+#signup textarea{
+  width: 200px;
+}
+
+#signup select{
+  width: 200px;
+}
+
 #icon >img{
   width: 125px;
   height: 125px;
@@ -196,7 +208,9 @@ td:empty{
   box-shadow: none;
 }
 
-
+td a{
+  color: blue;
+}
 
 //modal Anleitungen
 .modalBuch {
