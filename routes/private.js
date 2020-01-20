@@ -93,17 +93,26 @@ Member.findOne({"email": email})
         })
 }); 
 
-//Auflisten der Mitglieder (Admin Bereich)
-router.get('/private/members_list', (req, res, next) => {
-    Member.find()
-        .then(AllMembers => {
-          console.log("jetzt werden die Vereinsmitglieder für die Übersicht gesucht"); 
-          res.render('private/members_list', {AllMembers});
-        })
-        .catch(error => {
-            console.log(error);
-        })
-});  
+//Löschung von Mitgliedern (Members)
+router.get("/private/deleteMembers", (req, res, next) => {
+    if(req.session.currentUser.userrole=="admin"){
+        res.render("private/deleteMembers");
+    }
+    else{
+        res.redirect("/");
+    }
+    });
+
+
+    //Löschung von Services / Anleitungen
+router.get("/private/serviceDelete", (req, res, next) => {
+    if(req.session.currentUser.userrole=="admin"){
+        res.render("private/serviceDelete");
+    }
+    else{
+        res.redirect("/");
+    }
+    });
 
 
 module.exports = router;
