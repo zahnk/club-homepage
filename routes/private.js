@@ -43,7 +43,7 @@ router.get("/private/adminEvents", (req, res, next) => {
     }
     });
 
-//Erfassung von Members
+//Erfassung von Mitgliedern (Members)
 router.get("/private/adminMembers", (req, res, next) => {
     if(req.session.currentUser.userrole=="admin"){
         res.render("private/adminMembers");
@@ -53,7 +53,7 @@ router.get("/private/adminMembers", (req, res, next) => {
     }
     });
 
-router.post("/private/members_adm", (req, res, next) => {
+router.post("/private/adminMembers", (req, res, next) => {
   const email = req.body.email;
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
@@ -63,12 +63,12 @@ router.post("/private/members_adm", (req, res, next) => {
   //const imageUrl = req.body.imgUrl;
   const owner = req.session.currentUser._id;
   
-  console.log("nach post in members_adm");
+  //console.log("nach post in adminMembers");
   
 Member.findOne({"email": email})
         .then(data => {
             if (data !== null) {
-                res.render("private/members_adm", {
+                res.render("private/adminMembers", {
                     errorMessage: "Member already exists!"
                 });
                 return;
@@ -82,7 +82,7 @@ Member.findOne({"email": email})
                 age
             })
                 .then(() => {
-                    res.redirect("/private");
+                    res.redirect("/private/members_list");
                 })
                 .catch(error => {
                     console.log(error);
@@ -93,6 +93,17 @@ Member.findOne({"email": email})
         })
 }); 
 
+//Auflisten der Mitglieder (Admin Bereich)
+router.get('/private/members_list', (req, res, next) => {
+    Member.find()
+        .then(AllMembers => {
+          console.log("jetzt werden die Vereinsmitglieder für die Übersicht gesucht"); 
+          res.render('private/members_list', {AllMembers});
+        })
+        .catch(error => {
+            console.log(error);
+        })
+});  
 
 
 module.exports = router;
