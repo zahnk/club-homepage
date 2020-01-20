@@ -29,14 +29,6 @@ router.get("/private/service", (req, res, next) => {
   res.render("private/service");
 });
 
-//Hier fangen die Unterseiten an
-
-
-//Get route für das Formular zum erzeugen neuer Anleitungen
-  router.get("/private/service/serviceformular", (req,res,next)=>{
-    res.render("private/service/serviceformular")
-    
-    })
 
 //post Method zum erstellen neuer Anleitungen
 router.post("/private/service/serviceformular", (req, res,next)=>{
@@ -60,7 +52,30 @@ router.post("/private/service/serviceformular", (req, res,next)=>{
 })
 
 
+//Ansicht aller Anleitungen
+
+//PlfanzenSchnitt
+router.get("/private/service/:category", (req,res,next)=>{
+    let category=req.params.category
+    
+Manual.find({category: category})
+    .then(allManuals=>{
+        console.log(allManuals)
+        res.render("private/serviceDetails.hbs", {allManuals: allManuals})
+            })
+    .catch(err=>console.log(err))
+})
 
 
+//Edit route
+router.post("/private/service/:id/edit", (req,res,next)=>{
+    Manual.findOne({_id: req.params.id})
+    .then(oneManual=>{
+        res.render("private/serviceEdit", {oneManual})
+        
+    })
+    .catch(err=>console.log(err))
+
+})
 
 module.exports = router;
