@@ -48,7 +48,7 @@ router.post("/private/service/serviceformular", (req, res,next)=>{
         owner
     })
     .then(manual=>{
-         res.redirect("/private/service")
+         res.redirect(`/private/service/${category}`)
     })
 })
 
