@@ -178,6 +178,7 @@ text-align: center;
   color:rgb(124,186,0);
 }
 
+//general table style
 table {
   border-collapse: separate;
   border-spacing: 0.2em;
@@ -185,29 +186,36 @@ table {
   margin-top: 10 px;
   width: 90vw;
 }
-  
+
+//general table head and field style
 th,td {
   padding: 0.2em 0.5em;
   border-radius: 0.1em;  
 }  
 
+//general table head style
 th {
   background-color: rgb(124,186,0);
   color: black;
 }
+
+//general table header style
 thead{
  font-weight: bolder ;
 }
 
+//general table field style
 td {
   text-align: right;
   box-shadow: inset 1px 3px 5px -3px rgba(0,0,0,0.5);
 }   
 
+//design for empty fields
 td:empty{
   box-shadow: none;
 }
 
+//style for fields that contain links
 td a{
   color: blue;
 }
@@ -263,6 +271,7 @@ td a{
   align-content: center ;
 }
 
+//style for buttons in admin page
 .bigButton{
     display: block;
     width: 250px;
@@ -273,4 +282,28 @@ td a{
     border-radius: 5px;
     color: white;
     font-weight: bold;
+}
+
+/*flexbox1 für Startseite*/
+#flexStart1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/*flexbox2 für Startseite*/
+#flexStart2 {
+  display: flex;
+  flex-direction: column;
+}
+
+/*Startbild der Startseite*/
+#startbild1{
+  width: 27vw;
+  height: 32vh;
+}
+/*style Wetterkarte*/
+#wcom-e66e5221e77c60e4398f5e54590784ca{
+  height: 32vh;
+  width: 27vw;
 }

@@ -234,4 +234,25 @@ td a {
   color: white;
   font-weight: bold; }
 
+/*flexbox1 für Startseite*/
+#flexStart1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+/*flexbox2 für Startseite*/
+#flexStart2 {
+  display: flex;
+  flex-direction: column; }
+
+/*Startbild der Startseite*/
+#startbild1 {
+  width: 27vw;
+  height: 32vh; }
+
+/*style Wetterkarte*/
+#wcom-e66e5221e77c60e4398f5e54590784ca {
+  height: 32vh;
+  width: 27vw; }
+
 /*# sourceMappingURL=style.css.map */
