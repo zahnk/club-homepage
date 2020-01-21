@@ -348,4 +348,17 @@ td a {
 .formInput input, textarea {
   width: 200px; }
 
+#textUserStart h1 {
+  color: #7cba00;
+  font-size: 48px;
+  letter-spacing: 1px; }
+
+#textUserStart h3 {
+  font-size: 24px;
+  letter-spacing: 1px; }
+
+#textUserStart section {
+  font-size: 18px;
+  letter-spacing: 1px; }
+
 /*# sourceMappingURL=style.css.map */
