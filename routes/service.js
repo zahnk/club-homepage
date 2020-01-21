@@ -26,15 +26,16 @@ router.get("/private/userStartSeite", (req, res, next) => {
 
 //Einstiegsseite für die Anleitungen
 router.get("/private/service", (req, res, next) => {
-  res.render("private/service");
+    const user=req.session.currentUser
+  res.render("private/service", {user: user});
 });
 
 //Ansicht zum Löschen von Anleitungen über die Adminseite
 router.get("/private/serviceDelete", (req, res, next) => {
+    const user=req.session.currentUser
     Manual.find().populate("owner")
     .then(allManuals=>{
-        console.log(allManuals)
-        res.render("private/serviceDelete", {allManuals})
+        res.render("private/serviceDelete", {allManuals: allManuals, user: user})
     })
  });
 
@@ -63,12 +64,12 @@ router.post("/private/service/serviceformular", (req, res,next)=>{
 
 //Ansicht aller Anleitungen zu einer bestimmten Kategorie
 router.get("/private/service/:category", (req,res,next)=>{
-    let category=req.params.category
-    
+    let category=req.params.category;
+    const user=req.session.currentUser;
 Manual.find({category: category}).sort({level: 1})
     .then(allManuals=>{
         
-        res.render("private/serviceDetails.hbs", {allManuals: allManuals})
+        res.render("private/serviceDetails.hbs", {allManuals: allManuals, user: user})
             })
     .catch(err=>console.log(err))
 })
@@ -76,11 +77,12 @@ Manual.find({category: category}).sort({level: 1})
 
 //Anzeige des Satzes zum editieren
 router.get("/private/service/:id/edit", (req,res,next)=>{
+    const user=req.session.currentUser;
    const{title, duration, description, tools, ingredients, level, category}=req.body 
   Manual.findOne({_id: req.params.id})
  .then(oneManual=>{
        if(oneManual.owner==req.session.currentUser._id){
-          res.render("private/serviceEdit", {oneManual})
+          res.render("private/serviceEdit", {oneManual: oneManual, user: user})
       }
       else{
           res.redirect(`/private/service/${oneManual.category}`)

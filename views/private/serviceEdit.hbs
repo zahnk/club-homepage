@@ -11,13 +11,7 @@
      
 <br><br>
 <label for="level">Schwierigkeitsgrad</label>
-<select name="level" required>
-  <option value=""></option>
-  <option value="Anfänger">Anfänger</option>
-  <option value="Fortgeschrittener">Fortgeschritten</option>
-  <option value="Profi">Profi</option>
-   
-</select>
+<input name="level" value="{{oneManual.level}}" readonly>
 
 <br><br>
 <label for="duration">Zeitaufwand</label>
@@ -36,7 +30,7 @@
 <br><br>
 
 <button type="submit">Anleitung speichern</button>
-<a href="/private/service/{{oneManual.category}}">Abbrechen</a>
+<a href="/private/admin">Abbrechen</a>
   </form>
 </div>
 

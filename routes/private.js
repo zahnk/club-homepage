@@ -2,6 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const User = require('../models/users');
 const Member = require('../models/members');
+const Manual = require('../models/manual')
 
 
 
@@ -25,18 +26,46 @@ router.get("/private/userStartSeite", (req, res, next) => {
 
 //Nur wer eingelogged ist und Adminrechte hat, hat Zugriff auf die Adminseite
 router.get("/private/admin", (req, res, next) => {
+    let user=req.session.currentUser
+    
 if(req.session.currentUser.userrole=="admin"){
-    res.render("private/admin");
+    res.render("private/admin", {user: user});
 }
 else{
-    res.redirect("/");
+    Manual.find({owner: user._id}).
+    then(manuals=>{
+        res.render("private/userSeite", {manuals,user: user});
+    })
+    
 }
 });
 
+//route Useraccount
+router.get("/private/userAccount", (req,res,next)=>{
+    let user=req.session.currentUser;
+    Manual.find({owner: user._id}).
+    then(manuals=>{
+        res.render("private/userSeite", {manuals,user: user});
+    })
+})
+
+//zurück Route aus dem Useraccount
+router.get("/private/abbrechen", (req,res,next)=>{
+    
+    if(req.session.currentUser.userrole=="admin"){
+        res.redirect("/private/admin");
+    }
+    else{
+       res.redirect("/private/userStartSeite");
+        
+    }
+})
+
 //Erfassung von Events und Terminen
 router.get("/private/adminEvents", (req, res, next) => {
+    let user=req.session.currentUser
     if(req.session.currentUser.userrole=="admin"){
-        res.render("private/adminEvents");
+        res.render("private/adminEvents", {user: user});
     }
     else{
         res.redirect("/");
@@ -45,8 +74,9 @@ router.get("/private/adminEvents", (req, res, next) => {
 
 //Erfassung von Mitgliedern (Members)
 router.get("/private/adminMembers", (req, res, next) => {
+    let user=req.session.currentUser
     if(req.session.currentUser.userrole=="admin"){
-        res.render("private/adminMembers");
+        res.render("private/adminMembers", {user: user});
     }
     else{
         res.redirect("/");
@@ -54,6 +84,7 @@ router.get("/private/adminMembers", (req, res, next) => {
     });
 
 router.post("/private/adminMembers", (req, res, next) => {
+    let user=req.session.currentUser
   const email = req.body.email;
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
@@ -69,7 +100,7 @@ Member.findOne({"email": email})
         .then(data => {
             if (data !== null) {
                 res.render("private/adminMembers", {
-                    errorMessage: "Member already exists!"
+                    errorMessage: "Member already exists!", user: user
                 });
                 return;
             }
@@ -95,9 +126,10 @@ Member.findOne({"email": email})
 
 //Löschung von Mitgliedern (Members)
 router.get("/private/deleteMembers", (req, res, next) => {
+    let user=req.session.currentUser
     Member.find() 
         .then(AllMembers => {
-            res.render("private/deleteMembers", {AllMembers})
+            res.render("private/deleteMembers", {AllMembers, user: user})
         })
     });
 
