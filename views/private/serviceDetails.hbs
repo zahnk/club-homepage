@@ -14,13 +14,7 @@
 <p><strong>Schwierigkeitsrad</strong> <i>{{this.level}}</i></p>
 <textarea cols="100" rows="20" readonly>{{this.description}}</textarea>
 </div>
-<form action="/private/service/{{this._id}}/edit" method="GET">
 
-<button type="submit">Bearbeiten</button>
-{{#if message}}
-{{message}}
-{{/if}}
-</form>
 {{/each}}
 
 </div>
