@@ -44,12 +44,30 @@ a:hover {
 #signin input {
   border-radius: 10px; }
 
+#signin {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column; }
+
+#register {
+  color: white;
+  background-color: #333333;
+  border-radius: 0.25rem;
+  border: 1px solid #333333;
+  font-weight: lighter;
+  box-shadow: 1px 1px black; }
+
+#register:focus {
+  box-shadow: none; }
+
 /*styling for login*/
 #login {
-  border: none;
-  background-color: whitesmoke;
-  color: black;
-  box-shadow: 2px 2px darkgreen; }
+  color: white;
+  background-color: #333333;
+  border-radius: 0.25rem;
+  border-color: #333333;
+  margin-left: 20px; }
 
 /*effect on clicking login*/
 #login:focus {
@@ -287,11 +305,47 @@ td a {
 #startbild1 {
   width: 27vw;
   height: 32vh;
-  margin-top: 5vh; }
+  padding-top: 10px;
+  padding-right: 10px; }
 
 /*style Wetterkarte*/
 #wcom-e66e5221e77c60e4398f5e54590784ca {
   height: 32vh;
   width: 27vw; }
+
+#logout {
+  color: white;
+  background-color: #333333;
+  border-radius: 0.25rem;
+  border-color: #333333; }
+
+/*signup styling*/
+#Benutzerkonto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+/*signup form style*/
+#Benutzerkonto > form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  border-radius: 5px; }
+
+.formInput {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row; }
+
+.formInput label {
+  width: 120px; }
+
+.formInput input, textarea {
+  width: 200px; }
 
 /*# sourceMappingURL=style.css.map */
