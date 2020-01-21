@@ -1,5 +1,5 @@
 <h1>User Account</h1>
-
+<a href="/private/abbrechen">Zurück</a>
 <div>
 <form action="">
 <label for="firstname">Vorname:</label>
@@ -17,4 +17,23 @@
 <label for="address">Adresse</label>
 <textarea name="address" disabled>{{user.address}}</textarea>
 </form>
+
+<div>
+  <h3>Meine Anleitungen</h3>
+  
+<table id="myTable">
+  <tr>
+    <th>Titel</th>
+    <th>Kategorie</th>
+    <th>Bearbeiten</th>
+   </tr>
+  {{#each manuals}}
+        <tr>
+            <td>{{title}}</td>
+            <td>{{this.category}}</td>
+            <td><a href="/private/service/{{this._id}}/edit">Bearbeiten</a></td>
+        </tr>
+    {{/each}}
+</table>
+</div>
 </div>
