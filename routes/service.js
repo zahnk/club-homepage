@@ -29,7 +29,7 @@ router.get("/private/service", (req, res, next) => {
   res.render("private/service");
 });
 
-//Löschen von Anleitungen über die Adminseite
+//Ansicht zum Löschen von Anleitungen über die Adminseite
 router.get("/private/serviceDelete", (req, res, next) => {
     Manual.find().populate("owner")
     .then(allManuals=>{
@@ -61,7 +61,7 @@ router.post("/private/service/serviceformular", (req, res,next)=>{
 })
 
 
-//Ansicht aller Anleitungen
+//Ansicht aller Anleitungen zu einer bestimmten Kategorie
 router.get("/private/service/:category", (req,res,next)=>{
     let category=req.params.category
     
@@ -91,6 +91,7 @@ router.get("/private/service/:id/edit", (req,res,next)=>{
 
 })
 
+//Post zum editieren von einer Anleitung
 router.post("/private/service/serviceformular/:id", (req, res,next)=>{
     const{title, duration, description, tools, ingredients, level, category}=req.body 
     Manual.findByIdAndUpdate(req.params.id,{title, duration, description, tools, ingredients, level, category})
@@ -101,6 +102,7 @@ router.post("/private/service/serviceformular/:id", (req, res,next)=>{
     .catch(err=>console.log(err))
 })
 
+//Löschen einer Anleitung über die Adminseite
 router.get("/private/serviceDelete/:id", (req,res,next)=>{
     Manual.findByIdAndDelete({_id: req.params.id})
     .then(oneManual=>{
