@@ -12,11 +12,11 @@
     <label for="password">Password</label>
     <input id="myPassword" type="password" name="password" placeholder="********" value="" required>
     <!--input id="myPassword" type="password" name="" value=""-->
-    <button id="login" type="submit">Login</button>
+    <button id="login" type="submit">  Login  </button>
 </form>
 <br>
   {{#if errorMessage}}
     <div class="error-message">{{ errorMessage }}</div>
   {{/if}} 
-<a id="register" href="/signup">Register</a>
+<a href="/signup"><button id="login">Register</button></a>
 </div>

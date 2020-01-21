@@ -1,37 +1,54 @@
-<div id="signup">
-<h1>Signup</h1>
+<div id="Benutzerkonto">
+<h1>Benutzerkonto anlegen</h1>
 
-<form id="form" action="/signup" method="POST">
-<label for="firstname">Vorname</label>
+<form  action="/signup" method="POST">
+<div class="formInput">
+    <label for="firstname">Vorname</label>
     <input type="text" name="firstname" placeholder="Vorname" required>
-    
-<br><br>
-<label for="lastname">Nachname</label>
-    <input type="text" name="lastname" placeholder="Nachname" required>
-    
-<br><br>
+</div>
 
+    
+<br><br>
+<div class="formInput">
+    <label for="lastname">Nachname</label>
+    <input type="text" name="lastname" placeholder="Nachname" required>
+</div>
+
+    
+<br><br>
+<div class="formInput">
     <label for="email">Email-Address</label>
     <input type="email" name="email" placeholder="your-email@something.com" required>
+</div>
+    
 <br><br>
-    <label for="password">Password</label>
+<div class="formInput">
+     <label for="password">Password</label>
     <input id="myPassword" type="password" name="password" placeholder="********" value="" required>
+</div>
+   
     <!--input id="myPassword" type="password" name="" value=""-->
 <br><br>
+<div class="formInput">
     <label for="username">Username</label>
     <input type="text" name="username" placeholder="Your full username" required>
+</div>
+    
 <br><br>
-<label for="address">Adresse </label>
+<div class="formInput">
+    <label for="address">Adresse </label>
     <textarea name="address" > </textarea>
+</div>
+
     
 <br><br>
 
 <br><br>
-    <button type="submit">Benutzerkonto anlegen</button>
+    <button id="register" type="submit">Benutzerkonto anlegen</button>
   </form>
 <br>
   {{#if errorMessage}}
     <div class="error-message">{{ errorMessage }}</div>
   {{/if}}
 
-</div>
+</divvla>
