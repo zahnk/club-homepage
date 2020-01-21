@@ -1,5 +1,4 @@
 <h1>Neuanlage von Mitgliedern</h1>
-<a href="/private/admin">Zurück</a>
 <div id="signup">
 <br>
 <form action="/private/adminMembers" method="POST">
@@ -29,10 +28,11 @@
 <!-- <label for="imageUrl">Foto</label>
    <input type="imgUrl" name="imageUrl" placeholder="photo" required>
 <br><br> -->
-<br><br>
-    
-    <button type="submit">Neues Mitglied anlegen</button>
-    
+<br>
+    <button type="submit"><strong></strong>Neues Mitglied anlegen</button>
+    <br>
+    <button type="button"><a href="/private/admin">Abbrechen</a></button>
+    <br>
   </form>
 <br>
   {{#if errorMessage}}
