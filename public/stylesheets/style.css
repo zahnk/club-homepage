@@ -166,7 +166,7 @@ a:hover {
 
 /*style für Anleitungen*/
 #übersicht a {
-  width: 15vw;
+  width: 250px;
   height: 250px;
   flex-wrap: wrap;
   box-shadow: 3px 3px 15px #7cba00;
