@@ -1,12 +1,16 @@
+/*main body*/
 body {
   padding: 0px 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+/*style for part within body*/
 #bodyStyle{
   height: 75vh;
+  padding: 15px;
 }
 
+/*navbar*/
 nav{
   display: flex;
   justify-content: space-between;
@@ -20,28 +24,33 @@ nav{
   background-image: linear-gradient(to bottom right, rgb(124,186,0), rgb(67,100,0));
 }
 
+/*styling error message*/
 .error-message{
   width: 150px;
   background-color: red;
   color: whitesmoke
 }
 
+/*link styling*/
 a {
     text-decoration: none;
   color: black;
   font-weight: bold;
 }
 
+/*hover effect for links*/
 a:hover{
   font-size: larger;
   font-weight: bolder;
   color:whitesmoke
 }
 
+/*box for signin*/
 #signin input{
   border-radius: 10px;
 }
 
+/*styling for login*/
 #login{
   border: none;
   background-color: whitesmoke;
@@ -49,11 +58,12 @@ a:hover{
   box-shadow: 2px 2px darkgreen;
 }
 
+/*effect on clicking login*/
 #login:focus{
   box-shadow: none;
 }
 
-
+/*signup styling*/
 #signup{
   display: flex;
   justify-content: center;
@@ -61,7 +71,7 @@ a:hover{
   flex-direction: column;
   
 }
-
+/*signup form style*/
 #signup form{
   display: flex;
   justify-content: center;
@@ -73,18 +83,22 @@ a:hover{
   border-radius: 5px;
 }
 
+/*signup input fields style*/
 #signup input{
   width: 200px;
 }
 
+/*signup texarea fields*/
 #signup textarea{
   width: 200px;
 }
 
+/*signup select fields*/
 #signup select{
   width: 200px;
 }
 
+/*id for icon, image style*/
 #icon >img{
   width: 125px;
   height: 125px;
@@ -92,6 +106,7 @@ a:hover{
   margin-top: -5px;
 }
 
+/*style homepage logo*/
 #icon {
   display: flex;
   justify-content: left;
@@ -102,16 +117,21 @@ a:hover{
   margin-top: -5px;
 }
 
+/*style text besides logo*/
 #textIron {
   color: rgb(51,51,51);
   font-size: 60px;
   letter-spacing: 1px;
 }
+
+/*style 2nd text besides logo*/
 #textGarden {
   color: rgb(124,186,0);
   font-size: 60px;
   letter-spacing: 1px;
 }
+
+/*style images within Galerie*/
 .smallImages{
   display: inline-flexbox;
   justify-content: space-around;
@@ -120,6 +140,7 @@ a:hover{
   font-size: 80px;
 }
 
+/*style within Über uns box*/
 #aboutUs-box{
   background-color: lightgrey;
   margin-bottom: 0px;
@@ -127,6 +148,7 @@ a:hover{
   text-align: center;
 }
 
+/*background style within about us*/
 .background-whitesmoke{
 background-color: whitesmoke;
 margin-top: 0px;
@@ -134,17 +156,19 @@ padding-top: 20px;
 text-align: center;
 }
 
+/*style header within about us page*/
 .about-us-header{
   text-align: center;
   justify-content: center;
   margin-top: 10px;
 }
 
+/*style iframe within about us*/
 .about-us-header >iframe{
   box-shadow: 3px 3px 12px grey;
 }
 
-
+/*style für Anleitungen*/
 #seitentitel{
   display: flex;
   justify-content: center;
@@ -153,6 +177,7 @@ text-align: center;
   margin-bottom: 0
 }
 
+/*style für Anleitungen*/
 #übersicht{
   display: flex;
   justify-content: center;
@@ -161,13 +186,14 @@ text-align: center;
   height: 500px;
   flex-wrap: wrap;
   margin-top: 0;
-  
-  
+  width: 100px;
 }
 
+/*style für Anleitungen*/
 #übersicht a{
     width: 250px;
-    height: 250px;  
+    height: 250px;
+    flex-wrap: wrap;  
     box-shadow: 3px 3px 15px rgb(124,186,0);
     margin-top: 1px;
     display: flex;
@@ -179,9 +205,11 @@ text-align: center;
     text-shadow: 1px 1px rgb(67,100,0);
   }
 
+  /*style für Anleitungen*/
 #übersicht a:hover{
   color:rgb(124,186,0);
 }
+
 
 //general table style
 table {
@@ -269,6 +297,7 @@ td a{
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
 
+//style for buttons in admin page
 .divButton{
   display: flex;
   justify-content: space-evenly;
