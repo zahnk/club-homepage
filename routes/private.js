@@ -25,18 +25,20 @@ router.get("/private/userStartSeite", (req, res, next) => {
 
 //Nur wer eingelogged ist und Adminrechte hat, hat Zugriff auf die Adminseite
 router.get("/private/admin", (req, res, next) => {
+    let user=req.session.currentUser
 if(req.session.currentUser.userrole=="admin"){
-    res.render("private/admin");
+    res.render("private/admin", {user: user});
 }
 else{
-    res.redirect("/");
+    res.render("private/userSeite", {user: user});
 }
 });
 
 //Erfassung von Events und Terminen
 router.get("/private/adminEvents", (req, res, next) => {
+    let user=req.session.currentUser
     if(req.session.currentUser.userrole=="admin"){
-        res.render("private/adminEvents");
+        res.render("private/adminEvents", {user: user});
     }
     else{
         res.redirect("/");
@@ -45,8 +47,9 @@ router.get("/private/adminEvents", (req, res, next) => {
 
 //Erfassung von Mitgliedern (Members)
 router.get("/private/adminMembers", (req, res, next) => {
+    let user=req.session.currentUser
     if(req.session.currentUser.userrole=="admin"){
-        res.render("private/adminMembers");
+        res.render("private/adminMembers", {user: user});
     }
     else{
         res.redirect("/");
@@ -54,6 +57,7 @@ router.get("/private/adminMembers", (req, res, next) => {
     });
 
 router.post("/private/adminMembers", (req, res, next) => {
+    let user=req.session.currentUser
   const email = req.body.email;
   const firstname = req.body.firstname;
   const lastname = req.body.lastname;
@@ -69,7 +73,7 @@ Member.findOne({"email": email})
         .then(data => {
             if (data !== null) {
                 res.render("private/adminMembers", {
-                    errorMessage: "Member already exists!"
+                    errorMessage: "Member already exists!", user: user
                 });
                 return;
             }
@@ -95,9 +99,10 @@ Member.findOne({"email": email})
 
 //Löschung von Mitgliedern (Members)
 router.get("/private/deleteMembers", (req, res, next) => {
+    let user=req.session.currentUser
     Member.find() 
         .then(AllMembers => {
-            res.render("private/deleteMembers", {AllMembers})
+            res.render("private/deleteMembers", {AllMembers, user: user})
         })
     });
 

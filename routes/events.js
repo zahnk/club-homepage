@@ -23,6 +23,7 @@ router.use((req, res, next) => {
 });*/
 
 router.get("/private/events", (req, res, next) => {
+    let user=req.session.currentUser
     Event.find()
     .then (allEvents => {
         //console.log (allEvents);
@@ -35,7 +36,7 @@ router.get("/private/events", (req, res, next) => {
         }) + ' Uhr';
         return event;
         })
-        res.render("private/events", {allEvents:formattedEvents});    
+        res.render("private/events", {allEvents:formattedEvents, user: user});    
     })
     .catch(error => {
         next(error);
@@ -43,7 +44,7 @@ router.get("/private/events", (req, res, next) => {
 });
 
 router.post("/private/adminEvents", (req, res, next) => {
-    
+    let user=req.session.currentUser
     const name = req.body.name;
     const date = req.body.date;
     const description = req.body.description;
@@ -63,7 +64,7 @@ Event.findOne({  "name": name, "date": date, "place": place  })
         .then(data => {
             if (data !== null) {
                 res.render("private/events", {
-                    errorMessage: "The event already exists!"
+                    errorMessage: "The event already exists!", user:user
                 });
                 return;
             }
