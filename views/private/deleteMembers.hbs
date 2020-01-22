@@ -1,5 +1,7 @@
+<a href="/private/admin"><button id="register">Zurück</button></a>
+
 <h1>Löschen von Mitgliedern</h1>
-<a href="/private/admin">Zurück</a>
+
 <div id="signup">
 <br>
 <table>
@@ -16,14 +18,12 @@
             <td>{{lastname}}</td>
             <td>{{memberrole}}</td>
             <td>{{email}}</td>
-            <td> <a href="/private/deleteMembers/{{this._id}}"> Löschen </a></td>
+            <td> <a href="/private/deleteMembers/{{this._id}}"><button id="register">Löschen</button>  </a></td>
         </tr>
     {{/each}}
 </table>
 
 <!--form action="/private/deleteMembers" method="POST">
-
-
 
 
 

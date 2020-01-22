@@ -1,21 +1,32 @@
-<h1>User Account</h1>
-<a href="/private/abbrechen">Zurück</a>
+
+<a href="/private/abbrechen"> <button id="register" >Zurück</button></a>
 <div>
-<form action="">
-<label for="firstname">Vorname:</label>
+<form id="account" action="">
+  <h1>User Account</h1>
+  <div class="formInput">
+<label for="firstname">Vorname</label>
 <input name="firstname" value="{{user.firstname}}" disabled>
+</div>
 <br><br>
+<div class="formInput">
 <label for="lastname">Nachname</label>
 <input name="lastname" value="{{user.lastname}}" disabled>
+</div>
 <br><br>
+<div class="formInput">
 <label for="username">Username</label>
 <input name="username" value="{{user.username}}" disabled>
+</div>
 <br><br>
+<div class="formInput">
 <label for="email">Email</label>
 <input name="email" value="{{user.email}}" disabled>
+</div>
 <br><br>
+<div class="formInput">
 <label for="address">Adresse</label>
 <textarea name="address" disabled>{{user.address}}</textarea>
+</div>
 </form>
 
 <div>
@@ -31,7 +42,7 @@
         <tr>
             <td>{{title}}</td>
             <td>{{this.category}}</td>
-            <td><a href="/private/service/{{this._id}}/edit">Bearbeiten</a></td>
+            <td><a href="/private/service/{{this._id}}/edit"><button id="register">Bearbeiten</button></a></td>
         </tr>
     {{/each}}
 </table>
