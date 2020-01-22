@@ -17,7 +17,7 @@ nav{
   align-items: center;
   flex-direction: row;
   background-color: green;
-  height: 50px;
+  height: 80px;
   border-radius: 5px;
   padding: 15px;
   box-shadow: 2px 2px 10px grey;
@@ -523,9 +523,10 @@ td a{
 
 #membersSite{
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  
   
 }
 #membersSite div{
@@ -537,6 +538,7 @@ td a{
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 0 20px 0 20px;
 }
 
 #membersSite img{
