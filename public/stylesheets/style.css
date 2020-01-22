@@ -360,7 +360,8 @@ td a {
   width: 200px; }
 
 #createService textarea {
-  height: 100px; }
+  height: 80px;
+  width: 200px; }
 
 #serviceEdit {
   border: 8px solid #7cba00;

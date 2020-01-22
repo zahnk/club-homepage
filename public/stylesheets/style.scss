@@ -424,12 +424,15 @@ td a{
   font-weight: bold;
 }
 
+
+
 #createService input, select{
   width: 200px;
 }
 
 #createService textarea{
-  height: 100px
+  height: 80px;
+  width: 200px;
 }
 
 //bearbeiten von Anleitungen
