@@ -1,36 +1,47 @@
-<div>
-<form  action="/private/service/serviceformular/{{oneManual._id}}" method="POST">
+<div id="serviceEditFormular">
+
+<form id="serviceEdit" action="/private/service/serviceformular/{{oneManual._id}}" method="POST">
 
 <br><br>
+<div class="formInput">
 <label for="category">Kategorie</label>
 <input name="category" value="{{oneManual.category}}" readonly>
-
+</div>
 <br><br>
+<div class="formInput">
 <label for="title">Titel</label>
 <input type="text" name="title" value="{{oneManual.title}}">
-     
+</div>  
 <br><br>
+<div class="formInput">
 <label for="level">Schwierigkeitsgrad</label>
 <input name="level" value="{{oneManual.level}}" readonly>
-
+</div>
 <br><br>
+<div class="formInput">
 <label for="duration">Zeitaufwand</label>
 <input type="text" name="duration" value={{oneManual.duration}}>
-
+</div>
 <br><br>
+<div class="formInput">
 <label for="ingredients">Zutaten</label>
 <input type="text" name="ingredients" value="{{oneManual.ingredients}}">
+</div>
 <br><br>
+<div class="formInput">
 <label for="tools">Werkzeug/Utensilien</label>
 <input type="text" name="tools" value="{{oneManual.tools}}">
-
+</div>
 <br><br>
+<div class="formInput">
 <label for="description">Beschreibung </label>
     <textarea rows="15" cols="110" name="description" > {{oneManual.description}}</textarea>
+</div>
 <br><br>
 
-<button type="submit">Anleitung speichern</button>
-<a href="/private/admin">Abbrechen</a>
+<button type="submit" id="register">Anleitung speichern</button><br><br>
+<a href="/private/admin"><button id="register">Abbrechen</button></a>
+<br><br>
   </form>
 </div>
 

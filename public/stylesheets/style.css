@@ -29,13 +29,13 @@ nav {
   color: whitesmoke; }
 
 /*link styling*/
-a {
+nav a {
   text-decoration: none;
   color: black;
   font-weight: bold; }
 
 /*hover effect for links*/
-a:hover {
+nav a:hover {
   font-size: larger;
   font-weight: bolder;
   color: whitesmoke; }
@@ -57,6 +57,10 @@ a:hover {
   border: 1px solid #333333;
   font-weight: lighter;
   box-shadow: 1px 1px black; }
+
+#register a {
+  color: white;
+  text-decoration: none; }
 
 #register:focus {
   box-shadow: none; }
@@ -134,10 +138,13 @@ a:hover {
 
 /*style images within Galerie*/
 .smallImages {
-  display: inline-flexbox;
+  display: flex;
   justify-content: space-around;
   background-color: whitesmoke;
   font-size: 80px; }
+
+.smallImages img {
+  width: 400px; }
 
 /*style within Über uns box*/
 #aboutUs-box {
@@ -170,36 +177,6 @@ a:hover {
   align-items: center;
   margin-top: 25px;
   margin-bottom: 0; }
-
-/*style für Anleitungen*/
-#übersicht {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  height: 500px;
-  flex-wrap: wrap;
-  margin-top: 0;
-  width: 100px; }
-
-/*style für Anleitungen*/
-#übersicht a {
-  width: 250px;
-  height: 250px;
-  flex-wrap: wrap;
-  box-shadow: 3px 3px 15px #7cba00;
-  margin-top: 1px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  font-size: 20px;
-  color: #7cba00;
-  text-shadow: 1px 1px #436400; }
-
-/*style für Anleitungen*/
-#übersicht a:hover {
-  color: #7cba00; }
 
 table {
   border-collapse: separate;
@@ -250,16 +227,20 @@ td a {
   padding: 1rem 1.5rem;
   width: 60rem;
   height: 40rem;
-  border-radius: 0.5rem; }
+  border-radius: 0.5rem;
+  display: grid;
+  justify-content: center; }
 
 .close-buttonBuch {
   float: right;
   width: 1.5rem;
+  height: 1.5rem;
   line-height: 1.5rem;
   text-align: center;
   cursor: pointer;
   border-radius: 0.25rem;
-  background-color: lightgray; }
+  background-color: #333333;
+  color: whitesmoke; }
 
 .close-buttonBuch:hover {
   background-color: darkgray; }
@@ -285,7 +266,8 @@ td a {
   text-align: center;
   border-radius: 5px;
   color: white;
-  font-weight: bold; }
+  font-weight: bold;
+  text-decoration: none; }
 
 /*flexbox1 für Startseite*/
 #flexStart1 {
@@ -360,5 +342,91 @@ td a {
 #textUserStart section {
   font-size: 18px;
   letter-spacing: 1px; }
+
+#textUserStart a {
+  text-decoration: none;
+  color: #333333; }
+
+#createService {
+  width: 1000px;
+  height: 100%;
+  background-color: #7cba00;
+  border-radius: 5px;
+  display: grid;
+  justify-content: center;
+  font-weight: bold; }
+
+#createService input, select {
+  width: 200px; }
+
+#createService textarea {
+  height: 100px; }
+
+#serviceEdit {
+  border: 8px solid #7cba00;
+  width: 800px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: bold; }
+
+#serviceEditFormular {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+#serviceEditFormular label {
+  width: 200px; }
+
+#anleitungen {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column; }
+
+.elementsAnleitungen {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row; }
+
+.elementsAnleitungen a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 30px;
+  text-align: center;
+  font-weight: bolder; }
+
+.elementsAnleitungen div {
+  background-color: #7cba00;
+  height: 300px;
+  width: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px grey; }
+
+.elementsAnleitungen a:hover {
+  font-weight: lighter; }
+
+#detailService {
+  box-shadow: 2px 2px 12px grey;
+  border-radius: 5px;
+  margin: 25px 0 25px 0;
+  padding: 2px 40px 10px 25px; }
+
+#detailService textarea {
+  width: 100%;
+  border: 5px solid #7cba00;
+  border-radius: 8px; }
+
+#account label {
+  font-weight: bold; }
 
 /*# sourceMappingURL=style.css.map */

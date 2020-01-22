@@ -1,11 +1,13 @@
 
-<div>
+<div id="createService">
 <form id="form" action="/private/service/serviceformular" method="POST">
 <label for="title">Titel</label>
+<br><br>
     <input type="text" name="title" placeholder="Titel" required>
      
 <br><br>
 <label for="level">Schwierigkeitsgrad</label>
+<br><br>
 <select name="level">
   <option value=""></option>
   <option value="Anfänger">Anfänger</option>
@@ -15,6 +17,7 @@
 </select>
 <br><br>
 <label for="category">Kategorie</label>
+<br><br>
 <select name="category">
   <option value=""></option>
   <option value="Pflanzenschnitt">Pflanzenschnitt</option>
@@ -27,20 +30,24 @@
 </select>
 <br><br>
 
-<label for="duration">Zeitaufwand</label>
+<label for="duration">Zeitaufwand in Stunden</label>
+<br><br>
 <input type="text" name="duration">
 
 <br><br>
 <label for="ingredients">Zutaten</label>
+<br><br>
 <input type="text" name="ingredients">
 <br><br>
 <label for="tools">Werkzeug/Utensilien</label>
+<br><br>
 <input type="text" name="tools">
 <br><br>
 <label for="description">Beschreibung </label>
+<br><br>
     <textarea rows="15" cols="110" name="description" > </textarea>
 <br><br>
 
-<button type="submit">Anleitung speichern</button>
+<button type="submit" id="register">Anleitung speichern</button>
   </form>
 </div>
