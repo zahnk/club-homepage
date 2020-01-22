@@ -1,26 +1,83 @@
 <h1>Bilder Galerie</h1>
 
+<!-- Container for the image gallery -->
+<div class="container">
 
-<h3>Unser Lehrgarten</h3><br>
-<div class="smallImages">
-  <img src="/images/IMG-20180817-WA0002.jpg" alt="apples">
-  <img src="/images/IMG-20180817-WA0005.jpg" alt="peaches">
-  <img src="/images/IMG-20180817-WA0014.jpg" alt="fig">
-  <img src="/images/IMG-20180817-WA0018.jpg" alt="plums">
-  <img src="/images/IMG_0514.jpg" alt="flowers">
-  <img src="/images/IMG_4286.jpg" alt="flowers">
-  <img src="/images/IMG_6109.jpg" alt="flowers">
-</div> 
-<hr>
+  <!-- Full-width images with number text -->
+  <div class="mySlides">
+    <div class="numbertext">1 / 6</div>
+      <img src="/images/Gardasee 082.jpg" style="width:100%">
+  </div>
 
-<h3>Impressionen Gartenreise Gardasee 2019</h3><br>
-<div class="smallImages">
-  <img src="/images/Gardasee 082.jpg" alt="Garda 1">
-  <img src="/images/Gardasee 092.jpg" alt="Garda 2">
-  <img src="/images/Gardasee 107.jpg" alt="Garda 3">
-  <img src="/images/Gardasee 115.jpg" alt="Garda 4">
-  <img src="/images/Gardasee 151.jpg" alt="Garda 5">
-  <img src="/images/Gardasee 173.jpg" alt="Garda 6">
-  
- </div>
-<hr> 
+  <div class="mySlides">
+    <div class="numbertext">2 / 6</div>
+      <img src="/images/Gardasee 092.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">3 / 6</div>
+      <img src="/images/Gardasee 107.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">4 / 6</div>
+      <img src="/images/Gardasee 115.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">5 / 6</div>
+      <img src="/images/Gardasee 151.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="/images/Gardasee 173.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="/images/IMG_0514.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides">
+    <div class="numbertext">6 / 6</div>
+      <img src="/images/IMG_4286.jpg" style="width:100%">
+  </div>
+   <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+  <!-- Image text -->
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
+
+  <!-- Thumbnail images -->
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="/images/Gardasee 082.jpg" style="width:100%" onclick="currentSlide(1)" alt="Gardasee">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/Gardasee 092.jpg" style="width:100%" onclick="currentSlide(2)" alt="Gardasee">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/Gardasee 107.jpg" style="width:100%" onclick="currentSlide(3)" alt="Gardasee">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/Gardasee 115.jpg" style="width:100%" onclick="currentSlide(4)" alt="Gardasee">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/Gardasee 151.jpg" style="width:100%" onclick="currentSlide(5)" alt="Gardasee">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/Gardasee 173.jpg" style="width:100%" onclick="currentSlide(6)" alt="Gardasee">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/IMG_0514.jpg" style="width:100%" onclick="currentSlide(6)" alt="Gardasee">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="/images/IMG_4286.jpg" style="width:100%" onclick="currentSlide(6)" alt="Gardasee">
+    </div>
+  </div>
+</div>
+
